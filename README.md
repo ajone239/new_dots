@@ -92,7 +92,7 @@ Editors
 NeoVim
 --------------------
 NeoVim is the main editor I use.
-I use it chiefly ~cuz~ it's the best.
+The configuration is fully in Lua.
 The current config should auto install the first time you open it.
 
 Vim
