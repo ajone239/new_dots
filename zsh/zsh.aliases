@@ -1,0 +1,59 @@
+##################################################################
+#
+#         .zsh_files/.zsh.aliases file
+#
+#         Read in every time a new interactive zsh is started.
+#         Defines some useful aliases.
+#
+##################################################################
+
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+alias RM='rm -f'
+alias vim='nvim'
+alias ec='emacsclient'
+alias eserver='launchctl start emacs.daemon'
+alias reali='source ~/.zshrc'
+alias edirc='nvim ~/.zshrc'
+alias edali='nvim $ZSH_PATH/zsh.aliases'
+alias edpat='nvim $ZSH_PATH/zsh.path'
+alias edpro='nvim $ZSH_PATH/zsh.prompt'
+alias edbin='nvim ~/.config/bin'
+alias edmux='nvim ~/.config/tmux/.tmux.conf'
+alias edvim='nvim ~/.config/vim/vimrc'
+alias ednvim='nvim ~/.config/nvim/init.lua'
+
+#alias ls="ls --color=auto -F" # linux
+#alias ls='ls -GFh' # macos
+alias ls='exa' # exa is installed
+alias lt='exa -T'
+alias la="ls -a"
+alias ll="ls -lh"
+alias lr="ls -R"
+alias lx="ls -lahi"
+alias b="cd .."
+
+alias cls='clear'
+alias fin='open .'
+alias view="vim -R"
+
+alias ga="git add"
+alias gac="git add . && git commit -m"
+alias gcm="git commit -m"
+alias gst="git status"
+
+alias ta="tmux a -t"
+alias taa="tmux a -t gen"
+alias tl="tmux ls"
+alias tn="tmux new -s"
+alias tnn="tmux new -s gen"
+# TODO(ajone239): add aliases for zellij

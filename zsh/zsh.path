@@ -1,0 +1,47 @@
+##################################################################
+#
+#         .zsh_files/.zsh.path file
+#
+#         Read in every time a new interactive zsh is started.
+#         Use it to append to your PATH or redefine it. PATH is
+#         now globally set in /etc/zshrc.
+#
+##################################################################
+
+# here is where you can append to it, or change it
+# For example, to add /mydir/bin to your path, you could add:
+# export PATH="$PATH:/mydir/bin"
+
+#Uncomment the line below to use mpich
+#export PATH="$PATH:/usr/local/mpich/mpich-gcc/bin"
+
+#Uncomment the line below to use lam-mpi
+#export PATH="$PATH:/usr/local/lam-mpi/lam-mpi-gcc/bin"
+
+#Uncomment the line below to use GNU ARM
+##export PATH="$PATH:/usr/local/gnuarm/bin"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="$HOME/.config/bin:${PATH}"
+PATH="$HOME/.config/bin/maelstrom_dir:${PATH}"
+PATH="/usr/local/go/bin:${PATH}"
+PATH="$HOME/.cargo/bin:${PATH}"
+PATH="$HOME/.emacs.d/bin:${PATH}"
+PATH="/Library/TeX/texbin:${PATH}"
+# PATH="/usr/local/opt/openjdk/bin:$PATH"
+PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+PATH="/usr/local/opt/binutils/bin:$PATH"
+
+
+export MODULAR_HOME="$HOME/.modular"
+PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+
+export GOPATH="$HOME/go"
+
+#export TEXINPUTS="$HOME/texmf"
+# CPPFLAGS="-I/usr/local/opt/openjdk/include $CPPFLAGS"
+# CPPFLAGS="-I/opt/homebrew/opt/openjdk/include $CPPFLAGS"
+# export CPPFLAGS="-I/usr/local/opt/binutils/include $CPPFLAGS"
+# export LDFLAGS="-L/usr/local/opt/binutils/lib $LDFLAGS"
+export PATH

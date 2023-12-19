@@ -1,0 +1,3 @@
+#!/bin/bash
+
+brew list > $HOME/.config/install_scripts/brew_packages.txt

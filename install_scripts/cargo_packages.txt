@@ -1,0 +1,17 @@
+bacon
+bat
+cargo-expand
+cargo-make
+makers
+cargo-asm
+exa
+fd
+delta
+irust
+just
+mprocs
+nu
+porsmo
+rg
+sccache
+zellij

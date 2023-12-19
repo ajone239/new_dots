@@ -1,0 +1,6 @@
+bin/maelstrom_dir
+bin/weather.txt
+iterm2
+*.swap
+nvim/.swap
+

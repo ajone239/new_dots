@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cargo install --list | awk '!/:/ {print $1}' > $HOME/.config/install_scripts/cargo_packages.txt

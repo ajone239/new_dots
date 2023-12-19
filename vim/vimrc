@@ -1,0 +1,100 @@
+:syntax on
+
+syntax enable
+filetype plugin indent on
+
+set t_kb=
+set nocompatible
+set backspace=eol,indent,start
+set autoindent
+set smartindent
+
+set backupdir=~/.cache/nvim/backup//
+set directory=~/.cache/nvim/swap//
+set undodir=~/.cache/nvim/undo//
+
+" don't highlight the last search upon startup
+set viminfo="h"
+
+" Do C-style auto indentation on C/C++/Perl files only :)
+filetype on
+autocmd FileType c,cpp,perl :set cindent
+autocmd FileType md,markdown,tex,txt :set spell
+
+
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre *.go :%!gofmt
+
+autocmd BufWritePost *.rs :execute '!cargo fmt -- %' | edit
+
+" stop Vim from beeping all the time
+set vb
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+
+set expandtab
+set ruler
+set background=dark
+
+"Tell you if you are in insert mode
+set showmode
+
+"See where you've been
+set showcmd
+
+"match parenthesis, i.e. ) with (  and } with {
+set showmatch
+
+"ignore case when doing searches
+set ignorecase
+set smartcase
+
+"tell you how many lines have been changed
+set report=0
+
+set scrolloff=5
+set wildmode=longest,list
+set incsearch
+set hlsearch
+
+set showtabline=2
+set relativenumber
+set number
+
+imap jj <Esc>
+imap jk <Esc>
+
+" move between vim panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+autocmd FileType c,cpp,perl :set cindent
+
+let mapleader=" "
+set timeoutlen=500 " Set timeout length to 500 ms
+
+" time
+nnoremap <leader>T "=strftime("%c")<CR>P
+
+" Pandoc build
+autocmd FileType markdown map <leader>cc :!f=%; pandoc -o ${f/md/pdf} $f<CR>
+
+autocmd FileType markdown map <leader>od :!f=%; open ${f/md/pdf}<CR><ESC>
+
+map <leader>h :noh<CR>
+map <leader>s 1z=
+map <leader>rr :source ~/.vimrc
+
+map <leader>y "+y
+
+nnoremap <leader>ll :set nonumber norelativenumber<CR>
+nnoremap <leader>lL :set number relativenumber<CR>
+map gs <Plug>(easymotion-prefix)
+
+let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"

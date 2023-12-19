@@ -1,0 +1,26 @@
+#!/bin/bash
+
+W_FILE="/Users/austinjones/.config/bin/weather.txt"
+
+if [[ ! -f "$W_FILE" ]]; then
+  curl -s wttr.in/knoxville > $W_FILE
+else
+  F_DAY=$(stat -f "%Sm" $W_FILE | sed "s/  / /g" | cut -d " " -f "1 2 4")
+  TODAY=$(date | sed "s/  / /g" | cut -d " " -f "2 3 6")
+  # echo $F_DAY
+  # echo $TODAY
+
+  [[ "$F_DAY" != "$TODAY" ]] &&
+    curl -s wttr.in/knoxville > $W_FILE
+fi
+
+[[ "$1" == "-s" ]] &&
+  sed "13q;d" $W_FILE |
+    gsed 's/\x1b\[[0-9;]*m//g' |
+    sed "s/[[:punct:]]F* */ /g; s/\(-*[0-9]*[0-9]\)/\1 /g" |
+    tr -s ' ' '\n' |
+    sort |
+    sed -n -e '2p;$p' |
+    tr '\n' '-' |
+    sed 's/-$//g' ||
+  tail -n 33 $W_FILE
