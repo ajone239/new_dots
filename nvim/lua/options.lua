@@ -2,7 +2,7 @@
 -- Nvim options
 --
 
-vim.o.syntax = true
+vim.o.syntax = "true"
 vim.o.autoindent = true
 vim.o.smartindent = true
 
@@ -47,8 +47,8 @@ vim.opt.backupdir = { prefix .. "/nvim/.backup//" }
 vim.opt.directory = { prefix .. "/nvim/.swap//" }
 
 -- Set the behavior of tab
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true

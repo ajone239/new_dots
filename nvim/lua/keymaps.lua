@@ -21,6 +21,7 @@ vim.g.timeoutlen = 500
 
 vim.keymap.set('n', '<leader>h', ':noh<CR>')
 vim.keymap.set('n', '<leader>s', '1z=')
+vim.keymap.set('n', '<leader>e', ':Ex<CR>')
 -- TODO(ajone239): fix this
 vim.keymap.set('n', '<leader>rr', ':luafile ~/.config/nvim/init.lua<CR>')
 vim.keymap.set('n', '<leader>y', '"+y')

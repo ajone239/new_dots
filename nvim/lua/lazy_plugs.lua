@@ -49,6 +49,10 @@ require("lazy").setup({
     "imsnif/kdl.vim",
     ft = kdl
   },
+  {
+    "evanleck/vim-svelte",
+    ft = svetle
+  },
   { "ggandor/lightspeed.nvim", },
   -- Autocompletion plugin,
   { "hrsh7th/nvim-cmp", },

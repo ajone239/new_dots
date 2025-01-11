@@ -57,3 +57,10 @@ alias tl="tmux ls"
 alias tn="tmux new -s"
 alias tnn="tmux new -s gen"
 # TODO(ajone239): add aliases for zellij
+#
+alias z="zellij"
+alias za="zellij attach"
+alias zaa="zellij attach gen"
+alias zl="zellij ls"
+alias zn="zellij -s"
+alias znn="zellij -s gen"
