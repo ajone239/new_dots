@@ -1,0 +1,25 @@
+#!/bin/bash
+
+usage () {
+    echo "Usage: svim <query> [path:.]"
+}
+
+if [[ $# -lt 1 || $# -gt 2 ]]; then
+    usage
+    exit 1
+fi
+
+query=$1
+path=${2:-'.'}
+
+choice=$(rg -ni $query $path | fzf)
+
+if [[ -z "$choice" ]]; then
+    echo "No result chosen for query: [$query]"
+    exit 1
+fi
+
+filename=$(echo "$choice" | cut -d ':' -f 1)
+lineno=$(echo "$choice" | cut -d ':' -f 2)
+
+nvim "$filename" "+$lineno"
