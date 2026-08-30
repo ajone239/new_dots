@@ -1,0 +1,6 @@
+background = 111111
+foreground = ffffff
+
+font-family = "JetBrains Mono"
+
+link-url = true

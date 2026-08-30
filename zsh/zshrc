@@ -17,8 +17,6 @@ source $ZSH_PATH/zsh.aliases      # setup command aliases
 bindkey -v
 export KEYTIMEOUT=1
 
-umask 077
-
 # Turn off core dumps
 limit coredumpsize 0
 

@@ -35,16 +35,24 @@ PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 PATH="/usr/local/opt/binutils/bin:$PATH"
 
 PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
+
+PATH="/Users/austinjones/.pixi/bin:$PATH"
+PATH="$PATH:/Users/austinjones/.local/bin"
 
 export MODULAR_HOME="$HOME/.modular"
 PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 export GOPATH="$HOME/go"
 
-#export TEXINPUTS="$HOME/texmf"
+# export TEXINPUTS="$HOME/texmf"
 # CPPFLAGS="-I/usr/local/opt/openjdk/include $CPPFLAGS"
 # CPPFLAGS="-I/opt/homebrew/opt/openjdk/include $CPPFLAGS"
 # export CPPFLAGS="-I/usr/local/opt/binutils/include $CPPFLAGS"
 # export LDFLAGS="-L/usr/local/opt/binutils/lib $LDFLAGS"
+
 export PATH

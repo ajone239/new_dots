@@ -4,3 +4,13 @@ iterm2
 *.swap
 nvim/.swap
 
+firebase
+configstore
+opencode
+yarn
+
+zed/conversations
+zed/embeddings
+zed/prompts
+zed/.tmp*
+

@@ -8,10 +8,12 @@
 ##################################################################
 
 autoload -U compinit
-zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
 
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -33,9 +35,9 @@ alias edvim='nvim ~/.config/vim/vimrc'
 alias ednvim='nvim ~/.config/nvim/init.lua'
 
 #alias ls="ls --color=auto -F" # linux
-#alias ls='ls -GFh' # macos
-alias ls='exa' # exa is installed
-alias lt='exa -T'
+# alias ls='ls -GFh' # macos
+alias ls='eza' # exa is installed
+alias lt='eza -T'
 alias la="ls -a"
 alias ll="ls -lh"
 alias lr="ls -R"
@@ -50,6 +52,7 @@ alias ga="git add"
 alias gac="git add . && git commit -m"
 alias gcm="git commit -m"
 alias gst="git status"
+alias grbiom='git rebase -i origin/$(git_main_branch)'
 
 alias ta="tmux a -t"
 alias taa="tmux a -t gen"
