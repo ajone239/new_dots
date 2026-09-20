@@ -14,3 +14,4 @@ zed/embeddings
 zed/prompts
 zed/.tmp*
 
+helix/runtime/

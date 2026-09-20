@@ -1,0 +1,8 @@
+[[language]]
+name = "paddle"
+scope = "source.scheme"
+file-types = ["pd", "paddle"]
+grammar = "scheme"
+comment-tokens = ";"
+indent = { tab-width = 2, unit = "  " }
+

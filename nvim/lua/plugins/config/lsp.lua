@@ -104,7 +104,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
+vim.lsp.config('sourcekit', {
+    cmd = { '/usr/bin/xcrun', 'sourcekit-lsp' },
+    root_dir = function(bufnr, on_dir)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        on_dir(
+            vim.fs.root(fname, { 'Package.swift' })
+            or vim.fs.root(fname, { 'buildServer.json' })
+            or vim.fs.root(fname, { '*.xcodeproj', '*.xcworkspace' })
+            or vim.fs.root(fname, { '.git' })
+        )
+    end,
+})
 vim.lsp.enable("sourcekit")
+
+vim.filetype.add({
+    extension = {
+        paddle = 'scheme',
+        pd = 'scheme'
+    },
+})
 
 require('mason').setup()
 require('mason-lspconfig').setup({
