@@ -33,6 +33,7 @@ alias edbin='nvim ~/.config/bin'
 alias edmux='nvim ~/.config/tmux/.tmux.conf'
 alias edvim='nvim ~/.config/vim/vimrc'
 alias ednvim='nvim ~/.config/nvim/init.lua'
+alias edhx='hx ~/.config/helix/config.toml'
 
 #alias ls="ls --color=auto -F" # linux
 # alias ls='ls -GFh' # macos
