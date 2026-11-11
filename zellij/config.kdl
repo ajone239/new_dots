@@ -349,3 +349,12 @@ scrollback_editor "/opt/homebrew/bin/nvim"
 // Default: true
 //
 // styled_underlines false
+theme "classic"
+pane_frame_style "full"
+show_startup_tips false
+nested_session_handling "never"
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
